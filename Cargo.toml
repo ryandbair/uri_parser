@@ -1,8 +1,12 @@
 [package]
 name = "uri_parser"
+description = "Simple URI parser with zero copy and easy access to all URI parts"
 version = "0.1.0"
-authors = ["Ivan <ivan.zderadicka@gmail.com>"]
+authors = ["Ivan Zderadicka <ivan@zderadicka.eu>"]
+license = "MIT/Apache-2.0"
+homepage = "https://github.com/izderadicka/uri_parser"
+documentation = "https://docs.rs/uri_parser"
 
 [dependencies]
-nom = {version="^3.2", features=["nightly"]}
+nom = {version="^3.2"}
 

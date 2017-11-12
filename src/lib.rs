@@ -1,17 +1,20 @@
 //! Module to provide a light URI parser focused on easy access to
 //! and inspection of URI components
 //! 
-//! Usage:
+//! # Examples
+//! 
+//! ```
+//! use uri_parser::parse_uri;
 //! 
 //! let uri_string = "http://usak:kulisak@www.example.com:8080/root/test?kulo=sak&kde=je&help=no&usi=yes#middle";
 //! let parsed_uri = parse_uri(uri_string).unwrap();
 //! assert_eq!(parsed_uri.port, Some(8080));
-//! assert_eq!(parsed_uri.host, "www.example.com");
+//! assert_eq!(parsed_uri.host, Some("www.example.com"));
 //! assert!(parsed_uri.user.is_some());
-//! let d = u.query.unwrap();
+//! let d = parsed_uri.query.unwrap();
 //! let h=d.get("help").unwrap();
 //! assert_eq!(*h, "no");
-//! 
+//! ```
 //! 
 #[macro_use]
 extern crate nom;
@@ -97,7 +100,7 @@ pub struct User<'a> {
     password: Option<&'a str>
 }
 
-/// Possinle parsing errors
+/// Possible parsing errors
 #[derive(Debug,PartialEq)]
 pub enum Error {
     Parse(nom::Err),
