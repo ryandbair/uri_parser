@@ -1,0 +1,8 @@
+[package]
+name = "uri_parser"
+version = "0.1.0"
+authors = ["Ivan <ivan.zderadicka@gmail.com>"]
+
+[dependencies]
+nom = {version="^3.2", features=["nightly"]}
+
