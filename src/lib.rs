@@ -25,7 +25,7 @@ use std::path::Path;
 use std::collections::HashMap;
 use std::fmt::{self, Display};
 
-mod parser;
+pub mod parser;
 
 /// Represents parsed URI structure
 ///  URI parts are scheme, user (struct with name and password), host, port
